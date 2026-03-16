@@ -1,14 +1,44 @@
+"use client";
+import { useRef } from "react";
+
 export default function Hero() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    // Update CSS variables for the spotlight effect position
+    containerRef.current.style.setProperty("--mouse-x", `${x}px`);
+    containerRef.current.style.setProperty("--mouse-y", `${y}px`);
+  };
+
   return (
-    <section id="home" className="relative min-h-screen flex items-center px-8 md:px-16 overflow-hidden">
-      {/* Grid bg */}
-      <div className="absolute inset-0 z-0" style={{ backgroundImage: "linear-gradient(rgba(16,185,129,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(16,185,129,0.04) 1px, transparent 1px)", backgroundSize: "64px 64px", maskImage: "radial-gradient(ellipse at 30% 50%, black 20%, transparent 65%)" }} />
+    <section 
+      id="home" 
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      className="relative min-h-screen flex items-center px-8 md:px-16 overflow-hidden"
+    >
+      {/* Grid bg that reacts to mouse hover */}
+      <div 
+        className="absolute inset-0 z-0 transition-opacity duration-300" 
+        style={{ 
+          backgroundImage: "linear-gradient(rgba(16,185,129,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(16,185,129,0.06) 1px, transparent 1px)", 
+          backgroundSize: "64px 64px", 
+          // Default mask (desktop starts hidden/subtle until hover, fallback for mobile)
+          maskImage: "radial-gradient(circle at var(--mouse-x, 30%) var(--mouse-y, 50%), black 0%, transparent 40%)",
+          WebkitMaskImage: "radial-gradient(circle at var(--mouse-x, 30%) var(--mouse-y, 50%), black 0%, transparent 40%)"
+        }} 
+      />
       {/* Emerald glow */}
       <div className="absolute z-0 pointer-events-none animate-glow-pulse" style={{ width: "800px", height: "800px", borderRadius: "50%", background: "radial-gradient(circle, rgba(16,185,129,0.10) 0%, transparent 65%)", top: "-200px", left: "-300px" }} />
       {/* Teal glow secondary */}
       <div className="absolute z-0 pointer-events-none" style={{ width: "500px", height: "500px", borderRadius: "50%", background: "radial-gradient(circle, rgba(20,184,166,0.06) 0%, transparent 70%)", bottom: "-100px", left: "400px" }} />
 
-      <div className="relative z-10 max-w-4xl">
+      <div className="relative z-10 max-w-4xl pointer-events-none">
         {/* Eyebrow */}
         <div className="inline-flex items-center gap-3 text-emerald-400 text-xs font-semibold tracking-[0.2em] uppercase mb-7" style={{ animation: "fadeUp 0.8s 0.2s both" }}>
           <span className="block w-6 h-px bg-emerald-400" />
