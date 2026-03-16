@@ -3,12 +3,12 @@ const techs = ["Next.js","React.js","TypeScript","Node.js","PostgreSQL","Docker"
 export default function Marquee() {
   const doubled = [...techs, ...techs];
   return (
-    <div className="border-y border-white/5 bg-[#100c00] py-4 overflow-hidden">
+    <div className="border-y border-white/5 bg-[#1f2937] py-4 overflow-hidden">
       <div className="flex gap-12 whitespace-nowrap animate-marquee" style={{ width: "max-content" }}>
         {doubled.map((tech, i) => (
           <span key={i} className="inline-flex items-center gap-10">
-            <span className="font-display text-[0.7rem] font-semibold tracking-[0.18em] uppercase text-white/25">{tech}</span>
-            <span className="text-amber-500/40 text-xs">✦</span>
+            <span className="font-display text-[0.7rem] font-semibold tracking-[0.18em] uppercase text-white">{tech}</span>
+            <span className="text-emerald-500/40 text-xs">✦</span>
           </span>
         ))}
       </div>
