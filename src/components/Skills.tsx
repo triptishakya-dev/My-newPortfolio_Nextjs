@@ -9,24 +9,24 @@ const groups = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="bg-[#0d0900] px-8 md:px-16 py-24">
-      <p className="text-amber-400 text-xs font-semibold tracking-[0.2em] uppercase flex items-center gap-3 mb-4">
-        Skills <span className="block w-10 h-px bg-amber-400" />
+    <section id="skills" className="bg-[#111827] px-8 md:px-16 py-24">
+      <p className="text-emerald-400 text-xs font-semibold tracking-[0.2em] uppercase flex items-center gap-3 mb-4">
+        Skills <span className="block w-10 h-px bg-emerald-400" />
       </p>
       <h2 className="font-display text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-3">Technical Stack</h2>
       <p className="text-white/30 text-base mb-14">Production-tested tools I use to build real things.</p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5">
         {groups.map((group) => (
-          <div key={group.title} className="bg-[#0a0800] hover:bg-[#100c00] p-7 transition-colors duration-300 group">
-            <div className="text-white/22 group-hover:text-amber-400/50 font-display text-xs font-bold tracking-[0.15em] uppercase mb-5 transition-colors flex items-center gap-2">
-              <span className="w-1 h-1 rounded-full bg-amber-500 opacity-60" />
+          <div key={group.title} className="bg-[#111827] hover:bg-[#1f2937] p-7 transition-colors duration-300 group">
+            <div className="text-white/22 group-hover:text-emerald-400/50 font-display text-xs font-bold tracking-[0.15em] uppercase mb-5 transition-colors flex items-center gap-2">
+              <span className="w-1 h-1 rounded-full bg-emerald-500 opacity-60" />
               {group.title}
             </div>
             <div className="flex flex-wrap gap-1.5">
               {group.skills.map((skill) => (
                 <span key={skill.n}
-                  className={`text-xs font-medium px-3 py-1.5 border rounded-sm transition-all duration-200 cursor-default ${skill.h ? "border-amber-500/30 text-amber-400 bg-amber-500/8 hover:bg-amber-500/15" : "border-white/7 text-white/40 hover:border-amber-500/30 hover:text-amber-400"}`}>
+                  className={`text-xs font-medium px-3 py-1.5 border rounded-sm transition-all duration-200 cursor-default ${skill.h ? "border-emerald-500/30 text-emerald-400 bg-emerald-500/8 hover:bg-emerald-500/15" : "border-white/7 text-white/40 hover:border-emerald-500/30 hover:text-emerald-400"}`}>
                   {skill.n}
                 </span>
               ))}
