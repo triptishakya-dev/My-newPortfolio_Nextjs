@@ -2,7 +2,7 @@ const tags = ["Next.js 14","TypeScript","AWS","LangChain","Gemini API","Docker",
 
 export default function About() {
   return (
-    <section id="about" className="px-8 md:px-16 py-28">
+    <section id="about" className="px-8 md:px-16 py-28 bg-[#1f2937]">
       <p className="text-emerald-400 text-xs font-semibold tracking-[0.2em] uppercase flex items-center gap-3 mb-12">
         About <span className="block w-10 h-px bg-emerald-400" />
       </p>
