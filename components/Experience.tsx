@@ -20,7 +20,7 @@ const experiences = [
 export default function Experience() {
   return (
     <section id="experience" className="px-8 md:px-16 py-20 pt-0 bg-[#111827]">
-      <p className="text-emerald-400 text-xs font-semibold tracking-[0.2em] uppercase flex items-center gap-3 mb-4">
+      <p className="text-emerald-400 text-xs font-semibold tracking-[0.2em] uppercase flex items-center gap-3 mb-4 mt-10">
         Experience <span className="block w-10 h-px bg-emerald-400" />
       </p>
       <h2 className="font-display text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-14">Work History</h2>
