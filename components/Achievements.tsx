@@ -6,9 +6,9 @@ const achievements = [
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="px-8 md:px-16 py-24 pt-0 bg-[#1f2937]">
-      <p className="text-emerald-400 text-xs font-semibold tracking-[0.2em] uppercase flex items-center gap-3 mb-4">
-        Achievements <span className="block w-10 h-px bg-emerald-400 mt-15" />
+    <section id="achievements" className="px-8 md:px-16 py-24 pt-0 bg-[#1f2937] pt-10">
+      <p className="text-emerald-400 text-xs font-semibold tracking-[0.2em] uppercase flex items-center gap-3 mb-4 ">
+        Achievements <span className="block w-10 h-px bg-emerald-400" />
       </p>
       <h2 className="font-display text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-12">By the Numbers</h2>
 
